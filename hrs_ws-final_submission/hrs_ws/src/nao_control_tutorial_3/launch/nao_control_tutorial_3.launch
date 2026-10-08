@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find nao_apps)/launch/tactile.launch"/>
+    <node name="nao_control_tutorial_3" pkg="nao_control_tutorial_3" type="nao_3.py"/>
+</launch>

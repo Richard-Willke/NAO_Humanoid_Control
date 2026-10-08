@@ -1,0 +1,15 @@
+<launch>
+    <!--NOTE: this launch file does not work for some reason. Can be that each command needs more time to be executed succesfully-->
+    <env name="PYTHONPATH" value="$(env PYTHONPATH)" />
+
+    <include file="$(find nao_bringup)/launch/nao_full_py.launch">
+        <arg name="nao_ip" default="$(optenv NAO_IP 10.152.246.114)" />
+        <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
+    </include>
+
+    <include file="$(find nao_apps)/launch/tactile.launch">
+        <arg name="nao_ip" default="$(optenv NAO_IP 10.152.246.114)" />
+        <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
+    </include>
+
+</launch>

@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find nao_control_tutorial_3)/launch/nao_control_tutorial_3.launch"/>
+    <include file="$(find kalman_filter)/launch/kalman.launch"/>
+</launch>
