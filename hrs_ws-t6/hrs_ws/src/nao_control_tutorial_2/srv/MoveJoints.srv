@@ -1,9 +1,0 @@
-#CREATE request parameters
-string[] joint_name
-float64[] desired_pose_6D
-float64 max_velocity_fraction
-float64 execution_time
-
---------------------------------
-#CREATE response parameters
-float64[] pose_6D

@@ -1,7 +1,0 @@
-#CREATE request parameters
-float64[] target_pose 
-bool set_angles
-uint32 mode
---------------------------------
-#CREATE response parameters
-float64[] current_pose
