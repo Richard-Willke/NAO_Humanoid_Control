@@ -1,0 +1,38 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(nao_control_tutorial_1)
+
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  std_msgs
+  rospy
+  message_generation
+  sensor_msgs
+  cv_bridge
+)
+
+find_package(OpenCV)
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+
+add_service_files(
+    DIRECTORY srv
+    FILES
+    MoveJoints.srv
+)
+
+generate_messages(DEPENDENCIES std_msgs)
+catkin_package(CATKIN_DEPENDS message_runtime)
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+)
+
+catkin_install_python(PROGRAMS 
+    ./script/move_service.py
+    ./script/move_client.py
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+add_executable(nao_1 src/client.cpp)
+add_executable(nao_2 src/client2.cpp)
+target_link_libraries(nao_1 ${catkin_LIBRARIES})
+target_link_libraries(nao_2 ${catkin_LIBRARIES} ${OpenCV_LIBS})

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>HRS Tutorial 7</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="hrs-tutorial-7">HRS Tutorial 7</h1>
+<p>This branch hosts tutorial 7 for lecture Humanoid Robotic Systems.</p>
+<p><a href="./README_recommanded.html">Same README as html file</a> is available in the root foler, where the videos are converted into gif images, which is easier to read, thus recommended.</p>
+<p>Group members: Rohan Singh, Richard Willke, Yueyang Zhang</p>
+<h2 id="building">Building</h2>
+<p>After the devcontainer is built, make sure the scripts are executable:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">chmod</span> +x hrs_ws/src/nao_control_tutorial_3/script/nao_3.py
+</code></pre>
+<p>then, in the <code>hrs_ws/</code>, build the workspace:</p>
+<pre><code class="language-bash">catkin build
+</code></pre>
+<h2 id="running">Running</h2>
+<p>For this tutorial, you need at least 3 terminals.</p>
+<h3 id="bringup">Bringup</h3>
+<p>Before running the code, bringup the robot in the first terminal,</p>
+<pre><code class="language-bash">roslaunch nao_bringup nao_full_py.launch
+</code></pre>
+<h3 id="exercise-1-nao-in-the-blink-of-an-eye">Exercise 1: NAO, in the blink of an eye</h3>
+<p>For exercise 1, start the ros node for nao's leds in the 2nd terminal:</p>
+<pre><code class="language-bash">roslaunch nao_apps leds.launch
+</code></pre>
+<p>then, run the led control node in the last console:</p>
+<pre><code class="language-bash">rosrun nao_control_tutorial_3 nao_3
+</code></pre>
+<p>You can now try to press the bumpers of the nao robot and its eyes will blink with different colors, see the following image as example, video is attached <a href="./hrs_ws/src/nao_control_tutorial_3/doc/e1.mp4">here</a>.</p>
+<p><img src="file:////home/yueyang/workspaces/hrs/hrs_ws/src/nao_control_tutorial_3/doc/e1.gif" alt="gif"></p>
+<h3 id="exercise-2-lets-talk-nao--exercise-3-take-a-walk-with-nao">Exercise 2: Let’s talk NAO &amp; Exercise 3: Take a walk with NAO</h3>
+<p>Exercise 2 and 3 are finished within the same python script, the functionalities can be tested with arbitary order.</p>
+<p>For these 2 exercises, start the tactile node in the 2nd terminal:</p>
+<pre><code class="language-bash">roslaunch nao_apps tactile.launch
+</code></pre>
+<p>After which, run the control node (python) as follows, <strong>Note:</strong> after the node is started, the robot will stand up to the initial pose, don't be panic if the robot suddenly start to move.</p>
+<pre><code class="language-bash">rosrun nao_control_tutorial_3 nao_3.py
+</code></pre>
+<p>For exercise 2, you can tap the front tactile sensor of nao's head, you shall hear beeps of the robot, indicating the start of speech recognition, and also, you will read repeated prompts in console as <code>Got you</code> followed by the recognized word. For testing, only &quot;yes&quot;, &quot;no&quot;, &quot;please&quot;, &quot;hello&quot; and &quot;hi&quot; will be recognized by the algorithm.</p>
+<p>After your speech has been recorded (see terminal prompt for detail), tap the middle tactile sensor, the nao robot will then read the recorded words out. A video for this exercise is attached at <a href="./hrs_ws/src/nao_control_tutorial_3/doc/e2.mp4">here</a>.</p>
+<p>For the final exercise, just tap the back tactile sensor, and the robot will start to walk, it will walk straight forward for 20cm (see the following gif image or see the <a href="./hrs_ws/src/nao_control_tutorial_3/doc/e3.mp4">video</a>). If you want to change the target position and orientation, navigate to the <a href="./hrs_ws/src/nao_control_tutorial_3/script/nao_3.py">python node</a>, modify the data in function <code>walk()</code> at line 84, and run the node again to see the difference.</p>
+<p><img src="file:////home/yueyang/workspaces/hrs/hrs_ws/src/nao_control_tutorial_3/doc/e3.gif" alt="gif"></p>
+
+            
+            
+        </body>
+        </html>

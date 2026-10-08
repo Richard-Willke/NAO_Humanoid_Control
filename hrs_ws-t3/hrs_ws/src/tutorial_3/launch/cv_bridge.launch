@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="node_name" pkg="node_name" type="node_name" output="screen"/>
+    
+
+</launch>
