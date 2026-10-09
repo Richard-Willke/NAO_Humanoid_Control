@@ -8,6 +8,35 @@ Videos of the tests can be found [here](https://onedrive.live.com/?id=2CE7773A91
 
 Group members: Rohan Singh, Richard Willke, Yueyang Zhang
 
+
+## Problem Formulation
+
+Navigation problems are classified into three main types: 
+- Fully known environments without uncertainties 
+- Partially known environments with uncertainties uncovered through exploration
+- Unknown environments that can change post exploration and are updated upon re-detection
+
+The problem of this project is of type 2. Here, the robot is set to navigate to a known goal position from its known start position while avioding obstacles. 
+During navigation, the robot has to continuously update its map upon finding discrepancies with its internal model of the map. 
+
+![alt text](media/Screenshot_351.png)
+
+## Solution Aproach 
+
+![alt text](media/Screenshot_352.png)
+![alt text](media/Screenshot_353.png)
+![alt text](media/Screenshot_354.png)
+![alt text](media/Screenshot_355.png)
+
+## Results 
+
+![alt text](results/figure_3.png)
+
+<video controls src="final_vid.mp4" title="Title"></video>
+
+
+# Code Implementation
+
 ## Building
 
 After the devcontainer is built, make sure the scripts are executable:
