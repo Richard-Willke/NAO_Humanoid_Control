@@ -48,7 +48,7 @@ For more detailled informations, refer to the documentation folder.
 
 ![footstep plan result](results/figure_3.png)
 
-<video controls src="final_vid.mp4" title="Title"></video>
+![final result](media/NAO_final_vid.gif)
 
 
 # Code Implementation
